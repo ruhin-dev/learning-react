@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// const content = () => {
+//   return (
+//     <div>
+//       <h1>Hello world</h1>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+//     </div >
+
+
+//   )
+// }
+
+// const content = <h1>Hello React</h1>
+
+const Content = () => {
+  const [counter, setCounter] = React.useState(0)
+  return (
+
+    <div> <h1>{counter}</h1>
+      <button id="submitBtn" onClick={() => setCounter(counter + 1)}>Click</button>
+
+    </div>
+  )
+
+}
+
+// ReactDOM.render(content(), document.getElementById('root'))
+ReactDOM.render(<div><Content /><Content /></div>, document.getElementById('root'))
