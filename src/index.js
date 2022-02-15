@@ -1,10 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+class Test extends React.Component {
 
-const Content = ({ locale }) => {
-  return (
-    <h1 className="header">Time {new Date().toLocaleTimeString(locale)}</h1>
-  )
+  render() {
+    return (
+      <div>
+        <h1>{new Date().toLocaleTimeString(this.props.locale)} </h1>
+        <span>Comment : {this.props.children}</span>
+      </div>
+    )
+  }
 }
-ReactDOM.render(<Content locale="bn-BD" />, document.getElementById('root'))
+
+// const content = new Component
+
+
+// ReactDOM.render(content.print(), document.getElementById('root'))
+ReactDOM.render(<Test locale="bn-BD"> Props in class component </Test>, document.getElementById('root'))
