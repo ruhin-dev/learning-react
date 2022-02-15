@@ -1,20 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-class Test extends React.Component {
 
-  render() {
-    return (
-      <div>
-        <h1>{new Date().toLocaleTimeString(this.props.locale)} </h1>
-        <span>Comment : {this.props.children}</span>
-      </div>
-    )
-  }
+const Content = () => {
+  const [counter, setCounter] = React.useState(0)
+  return (
+    <div>
+      <h2 className="heading">{counter}</h2>
+      <button className="btn" type="button" onClick={() => setCounter(counter + 1)}>+Inc</button>
+      <button className="btn" type="button" onClick={() => setCounter(counter - 1)}>-Dec</button>
+    </div>
+  )
 }
 
-// const content = new Component
-
-
-// ReactDOM.render(content.print(), document.getElementById('root'))
-ReactDOM.render(<Test locale="bn-BD"> Props in class component </Test>, document.getElementById('root'))
+ReactDOM.render(<div className="container">
+  <Content />
+  <Content />
+  <Content />
+</div>, document.getElementById('root'))
